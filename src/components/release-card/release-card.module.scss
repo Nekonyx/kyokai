@@ -1,0 +1,33 @@
+.link {
+  width: 100%;
+}
+
+.card {
+  background: transparent;
+}
+
+.body {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, .8);
+  height: 100%;
+}
+
+.image {
+  height: 320px;
+}
+
+.footer {
+  display: block;
+
+  &__title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &-original {
+      opacity: 0.4;
+    }
+  }
+}
