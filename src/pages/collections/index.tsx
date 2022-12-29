@@ -15,16 +15,16 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 }
 
-export default function HomePage(props: IProps) {
+export default function CollectionListPage(props: IProps) {
   return (
     <Fragment>
       <Head>
-        <title>Домашняя</title>
+        <title>Коллекции</title>
       </Head>
       <Layout>
         <Spacer y={1} />
-        <Text h1>Домашняя</Text>
-        <Text>(здесь тоже пусто)</Text>
+        <Text h1>Коллекции</Text>
+        <Text>(здесь очень пусто)</Text>
       </Layout>
     </Fragment>
   )

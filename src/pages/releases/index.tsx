@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next'
-import { useEffect, useMemo, useState } from 'react'
+import Head from 'next/head'
+import { Fragment, useEffect, useMemo, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 import { ReleaseCard } from '@/components/release-card'
@@ -50,21 +51,26 @@ export default function ReleaseListPage({ initialData }: IProps) {
   }, [list])
 
   return (
-    <Layout>
-      <Spacer y={1} />
-      <Text h1>Релизы</Text>
+    <Fragment>
+      <Head>
+        <title>Релизы</title>
+      </Head>
+      <Layout>
+        <Spacer y={1} />
+        <Text h1>Релизы</Text>
 
-      <Grid.Container gap={1} justify="center">
-        {items?.map((item) => (
-          <Grid key={item.slug} xs={5} sm={2.2} md={2} lg={2} xl={1.5}>
-            <ReleaseCard release={item} />
-          </Grid>
-        ))}
-      </Grid.Container>
+        <Grid.Container gap={1} justify="center">
+          {items?.map((item) => (
+            <Grid key={item.slug} xs={5} sm={2.2} md={2} lg={2} xl={1.5}>
+              <ReleaseCard release={item} />
+            </Grid>
+          ))}
+        </Grid.Container>
 
-      {isLoading && <Loading />}
+        {isLoading && <Loading />}
 
-      <div ref={observeRef} />
-    </Layout>
+        <div ref={observeRef} />
+      </Layout>
+    </Fragment>
   )
 }

@@ -1,4 +1,6 @@
 import { GetServerSideProps } from 'next'
+import Head from 'next/head'
+import { Fragment } from 'react'
 
 import Layout from '@/containers/layout'
 import { Spacer, Text } from '@nextui-org/react'
@@ -15,10 +17,15 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
 export default function IndexPage(props: IProps) {
   return (
-    <Layout>
-      <Spacer y={1} />
-      <Text h1>Главная</Text>
-      <Text>(здесь кстати ничего нет)</Text>
-    </Layout>
+    <Fragment>
+      <Head>
+        <title>Главная</title>
+      </Head>
+      <Layout>
+        <Spacer y={1} />
+        <Text h1>Главная</Text>
+        <Text>(здесь кстати ничего нет)</Text>
+      </Layout>
+    </Fragment>
   )
 }
