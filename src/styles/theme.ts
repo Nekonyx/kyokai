@@ -1,7 +1,7 @@
 import { createTheme } from '@nextui-org/react'
 
 export const theme = createTheme({
-  type: 'light',
+  type: 'dark',
   theme: {
     fonts: {
       sans: 'Nunito, "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif',
